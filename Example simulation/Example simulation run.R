@@ -1,5 +1,14 @@
-## Elm Creek Reserve Park (ECRP) inputs ####
+# An example script running simulations for Elm Creek, MN with the density and 
+# contact kernel combinations used in this study. All inputs are linked to RDS 
+# files in the Example simulation/Inputs folder. 
 
+# CAUTION: run_all_simulations_local_density_est() takes a long time to run 
+# with the current starting.values object (1000 iterations per execution), 
+# particularly with high density/ slow contact decay scenarios. Suggested that 
+# users modify starting.values object to desired number of runs if interested 
+# in running all example simulations in this script.
+
+## Elm Creek Reserve Park (ECRP) inputs ####
 ECRP_fall_sim_input <- readRDS("Example simulation/Inputs/ECRP_sim_input_fall.RDS")
 
 # See Study area grid creation.R for illustration of building ECRP.grid, 

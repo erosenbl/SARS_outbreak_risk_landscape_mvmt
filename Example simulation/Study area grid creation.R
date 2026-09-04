@@ -24,7 +24,7 @@ ECRP_daily_mvmt <- daily_step_length(data = ECRP_annual_loc_df,
                                      CRS = "+proj=utm +zone=15 +datum=WGS84 
                                      +units=m +no_defs +type=crs")
 
-#Extract median daily distance moved by sex/age class
+#Extract median daily distance moved by sex/age class (required for simulation run)
 ECRP_median_mvmt <- extract_movement(daily_steps = ECRP_daily_mvmt, 
                                      collar_metadata = ECRP.collar.meta, 
                                      result = "median.mvmt")
@@ -38,6 +38,7 @@ ECRP.grid <- create_study_area_grid(median_mvmt = ECRP_median_mvmt,
                                     "~/ECRP_study_area_convex_hull_clipped.shp", 
                                     SHP = TRUE)
 
+# Optional code to add property centroids to grid object.
 ECRP.grid <- add_centroid_count_to_grid(
   shapefile_path = "~/EC_County_Parcels.shp", 
   name = "Residence_count",

@@ -1,32 +1,44 @@
+# Script to designate spatial contact kernels as slow or fast decay, and 
+# identify one slow decay and fast decay kernels with the same area under the
+# curve. 
+
+# This script is for demonstration purposes only - contact rate files are not 
+# included in this repo.
+
 # Function code
 library(glmmTMB)
 library(DescTools)
 library(dplyr)
 
-# Annual selection
+# Annual contact rates
 # MN
-ECRP_annual <- readRDS("~/Results/Initial_spillover/ECRP/contact_rates_annual_EC.RDS")
-CP_annual <- readRDS("~/Results/Initial_spillover/Carver/contact_rates_annual_CP.RDS")
-shakopee_annual <- readRDS("~/Results/Initial_spillover/Shakopee/contact_rates_annual_shakopee.RDS")
+ECRP_annual <- readRDS("~contact_rates_annual_EC.RDS")
+CP_annual <- readRDS("~contact_rates_annual_CP.RDS")
+shakopee_annual <- readRDS("~contact_rates_annual_shakopee.RDS")
 
 # IL
-TON_annual <- readRDS("~/Results/Initial_spillover/TON/contact_rates_annual_TON.RDS")
-Shelbyville_annual <- readRDS("~/Results/Initial_spillover/Shelbyville/contact_rates_annual_Shelby.RDS")
+TON_annual <- readRDS("~contact_rates_annual_TON.RDS")
+Shelbyville_annual <- readRDS("~contact_rates_annual_Shelby.RDS")
 
 # TN
-ames_annual <- readRDS("~/Results/Initial_spillover/Ames/contact_rates_annual_ames.RDS")
-lone_oaks_annual <- readRDS("~/Results/Initial_spillover/Lone_oaks/contact_rates_annual_lone_oaks.RDS")
+ames_annual <- readRDS("~contact_rates_annual_ames.RDS")
+lone_oaks_annual <- readRDS("~contact_rates_annual_lone_oaks.RDS")
 
 # NY
-SI_annual <- readRDS("~/Results/Initial_spillover/SI/contact_rates_annual_SI.RDS")
+SI_annual <- readRDS("~contact_rates_annual_SI.RDS")
 
 # PA
-TL_annual <- readRDS("~/Results/Initial_spillover/TL/contact_rates_annual_TL.RDS")
-DMA2_annual <- readRDS("~/Results/Initial_spillover/DMA2/contact_rates_annual_DMA2.RDS")
+TL_annual <- readRDS("~contact_rates_annual_TL.RDS")
 
-annual_models <- list(ECRP_annual = ECRP_annual, CP_annual = CP_annual, shakopee_annual = shakopee_annual, 
-                      TON_annual = TON_annual, Shelbyville_annual = Shelbyville_annual, ames_annual = ames_annual, 
-                      lone_oaks_annual = lone_oaks_annual, SI_annual = SI_annual, TL_annual = TL_annual, DMA2_annual = DMA2_annual)
+annual_models <- list(ECRP_annual = ECRP_annual, 
+                      CP_annual = CP_annual, 
+                      shakopee_annual = shakopee_annual, 
+                      TON_annual = TON_annual, 
+                      Shelbyville_annual = Shelbyville_annual, 
+                      ames_annual = ames_annual, 
+                      lone_oaks_annual = lone_oaks_annual, 
+                      SI_annual = SI_annual, 
+                      TL_annual = TL_annual)
 
 # standard distance range
 distance_seq <- seq(0, 2, by = 0.01)
@@ -52,7 +64,8 @@ calc_half_life <- function(pred_df) {
 half_lives <- map_dbl(pred_list, calc_half_life)
 
 #Classify decay rate as fast or slow, relative to median half life across models
-decay_category <- ifelse(half_lives >= median(half_lives, na.rm = TRUE), "slow", "fast")
+decay_category <- ifelse(half_lives >= median(half_lives, na.rm = TRUE), "slow",
+                         "fast")
 
 #Calculate area under curve
 auc_values <- map_dbl(pred_list, ~ AUC(x = .$distance, y = .$pred))
@@ -75,7 +88,8 @@ pairings <- map_dfr(slow_models$model, function(sm) {
   fast_match <- fast_models$model[which.min(abs(fast_models$auc - slow_auc))]
   tibble(slow_model = sm,
          fast_model = fast_match,
-         auc_diff = abs(fast_models$auc[fast_models$model == fast_match] - slow_auc))
+         auc_diff = abs(fast_models$auc[fast_models$model == fast_match] - 
+                          slow_auc))
 })
 
 pairings
@@ -89,8 +103,6 @@ pred_df <- bind_rows(
   left_join(model_stats, by = "model")
 
 
-
-
 ggplot(pred_df, aes(x = distance, y = pred, color = decay, group = model)) +
   geom_line(alpha = 0.6) +
   labs(x = "Distance", y = "Predicted Mean", color = "Decay Type") +
@@ -101,7 +113,8 @@ pred_df_top_pair <- pred_df %>%
 
 ggplot(pred_df, aes(x = distance, y = pred, color = decay, group = model)) +
   geom_line(alpha = 0.3) +
-  geom_line(data = pred_df_top_pair, aes(x = distance, y = pred, color = decay, group = model),
+  geom_line(data = pred_df_top_pair, aes(x = distance, y = pred, color = decay, 
+                                         group = model),
             linewidth = 1.3) +
   labs(x = "Distance", y = "Predicted Mean", color = "Decay Type") +
   scale_colour_viridis_d(end = 0.7)+
@@ -130,7 +143,8 @@ predict_glmmTMB_ci <- function(model, dist_seq, include_re = FALSE) {
 }
 
 # Apply to all models in your list
-pred_list <- map(annual_models, predict_glmmTMB_ci, dist_seq = distance_seq, include_re = FALSE)
+pred_list <- map(annual_models, predict_glmmTMB_ci, dist_seq = distance_seq, 
+                 include_re = FALSE)
 
 # Combine into one tidy data frame
 pred_df <- bind_rows(
@@ -138,8 +152,7 @@ pred_df <- bind_rows(
 )
 
 # (Optional) join decay info or metadata
-pred_df <- left_join(pred_df, model_stats, by = "model") %>% 
-  filter(model != "DMA2_annual")
+pred_df <- left_join(pred_df, model_stats, by = "model")
 
 highlight_models <- c("lone_oaks_annual", "CP_annual")
 
@@ -147,7 +160,8 @@ pred_df_top_pair <- pred_df %>%
   filter(model %in% highlight_models)
 
 contact_rate_all_plot <- ggplot(pred_df, 
-                                aes(x = distance, y = est, color = decay, group = model)) +
+                                aes(x = distance, y = est, color = decay, 
+                                    group = model)) +
   geom_line(alpha = 0.6) +
   labs(x = "Distance (km)", 
        y = "Pair-wise contacts per day",
@@ -208,9 +222,12 @@ contact_rate_all_plot <- contact_rate_all_plot +
     show.legend = FALSE
   )
 
-top_pair_label <- label_df %>% filter(study_area %in% c("Carver Park (MN)", "Lone Oaks (TN)"))
+top_pair_label <- label_df %>% filter(study_area %in% c("Carver Park (MN)", 
+                                                        "Lone Oaks (TN)"))
 
-contact_rate_highlight_plot <- ggplot(pred_df, aes(x = distance, y = est, color = decay, group = model)) +
+contact_rate_highlight_plot <- ggplot(pred_df, aes(x = distance, y = est, 
+                                                   color = decay, group = model)
+                                      ) +
   geom_line(alpha = 0.6) +
   geom_ribbon(data = pred_df_top_pair,
               aes(ymin = pred_lower, ymax = pred_upper, fill = decay),
@@ -244,11 +261,4 @@ contact_rate_highlight_plot <- ggplot(pred_df, aes(x = distance, y = est, color 
     ) +
   theme_classic()
   
-
-ggsave(filename = "annual_contact_rate_plot.png",
-               plot = ggpubr::ggarrange(contact_rate_all_plot, contact_rate_highlight_plot, common.legend = TRUE),
-               device = "png",path = "~/Results/Contact_rate_selection", 
-               width = 10, height = 5, units = "in",dpi = 300)
-
-
 #Going to go with lone oaks and carver for slow and fast, respectively
