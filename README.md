@@ -11,11 +11,10 @@ functions for simulations. If interested in running contents of Example
 simulation folder, *run this script first*. DONE
 
 ### Contact rate calculation and selection subfolder
-#### Contact rate calculation example
+
 **example_contact_rate_calculation.R** - A script to show how raw pair-wise 
 contact rates were calculated using collar data. DONE
 
-#### Contact kernel selection script
 **select_slow_and_fast_decay_contact_kernels.R** - A script to identify one slow
 decay contact kernel and one fast decay contact kernel from the nine study areas
 considered. DONE
