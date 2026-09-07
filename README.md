@@ -2,7 +2,7 @@
 R code for manuscript titled "Landscape structure and animal movement influence 
 the fate of SARS-CoV-2 spillover in white-tailed deer"
 
-Elias Rosenblatt<sup>1,*<sup>, Guillaume Bastille-Rousseau<sup>2<sup>, Michael
+Elias Rosenblatt^1,*^, Guillaume Bastille-Rousseau<sup>2<sup>, Michael
 Egan<sup>2<sup>, James Forester<sup>3<sup>, Billy J. Gardner<sup>4<sup>, 
 Tyler Garwood<sup>1<sup>, Daniel M. Grove<sup>4<sup>, 
 Tadao Kishimoto<sup>2<sup>, Justin Kosiewska<sup>4<sup>, 
