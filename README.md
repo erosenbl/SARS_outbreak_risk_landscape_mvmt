@@ -36,7 +36,7 @@ and Meggan E. Craft<sup>1<sup>.
 functions for simulations. If interested in running contents of Example 
 simulation folder, *run this script first*.
 
-### Contact rate calculation and selection subfolder
+### contact_rate_calculation_and_selection subfolder
 
 **example_contact_rate_calculation.R** - A script to show how raw pair-wise 
 contact rates were calculated using collar data.
@@ -45,29 +45,29 @@ contact rates were calculated using collar data.
 decay contact kernel and one fast decay contact kernel from the nine study areas
 considered.
 
-## Example simulation folder
+## example_simulation folder
 ### Study area creation script
 **study_area_grid_creation.R** - A script to demonstration the delineation of a 
-study area grid, for use in **Example_simulation_run.R**. 
+study area grid, for use in **example_simulation_run.R**. 
 *This script is not functional*, but the resulting file 
-(**Inputs/ECRP_grid.RDS**) has been included in this repo for use in **Example_simulation_run.R**.
+(**Inputs/ECRP_grid.RDS**) has been included in this repo for use in **example_simulation_run.R**.
 
 ### Simulation input file creation script
 **simulation_input_creation.R** - A script to create an input file necessary 
-for use in **Example_simulation_run.R**. *This script is not functional*, but 
+for use in **example_simulation_run.R**. *This script is not functional*, but 
 the resulting file (**Inputs/ECRP_sim_input_fall.RDS**) has been included in 
 this repo for use in 
-**Example_simulation_run.R**.
+**example_simulation_run.R**.
 
 ### Example simulation script
-**Example_simulation_run.R** - An example script running simulations for 
+**example_simulation_run.R** - An example script running simulations for 
 Elm Creek, MN with the density and contact kernel combinations used in 
 this study. All inputs are linked to RDS files in the 
-*Example_simulation/Inputs* folder. This script is functional, but will take a 
+*example_simulation/Inputs* folder. This script is functional, but will take a 
 long time to run (see caution note for details).
 
 ### Inputs subfolder 
-This folder includes RDS files necessary to run **Example_simulation_run.R**. 
+This folder includes RDS files necessary to run **example_simulation_run.R**. 
 Raw location and collar metadata are not included here, but may be available 
 upon request.
 
@@ -109,7 +109,7 @@ selection probabilities for activity centroid selection (origin_probs;
 same format as selection_probs), 
 and sex-specific centroid exponetial decay models (centroid_decay).
 
-## Random forest analysis folder
+## random_forest_analysis folder
 This folder contains the necessary summary scripts, analytical scripts, and 
 summary data to demonstrate the random forest analysis incuded in this study.
 
@@ -120,10 +120,11 @@ rate, and spatial spread rate. Script ends with function demonstration for
 summarizing landscape metrics for Elm Creek, MN.
 
 ### Random forest model fitting scripts
-**random_forest_model_fits.R** - Script to take simulation output (**Random forest analysis/Data/df_RF_final.RDS**) and fit random forest models for outbreak 
-probability, maximum incidence rate, and maximum spread rate, resulting in 
-Figure 3 in the manuscript. Users could modify the output from these fitted 
-models to recreate Figure 4 in the manusctipt.
+**random_forest_model_fits.R** - Script to take simulation output 
+(**random_forest_ _analysis/Data/df_RF_final.RDS**) and fit random forest models
+for outbreak probability, maximum incidence rate, and maximum spread rate, 
+resulting in Figure 3 in the manuscript. Users could modify the output from 
+these fitted models to recreate Figure 4 in the manusctipt.
 
 ###Data subfolder
 **df_RF_final.RDS** - A data frame containing all simulations across all study 
