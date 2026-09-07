@@ -2,17 +2,17 @@
 R code for manuscript titled "Landscape structure and animal movement influence 
 the fate of SARS-CoV-2 spillover in white-tailed deer"
 
-Elias Rosenblatt^1,*^, Guillaume Bastille-Rousseau<sup>2<sup>, Michael
-Egan<sup>2<sup>, James Forester<sup>3<sup>, Billy J. Gardner<sup>4<sup>, 
-Tyler Garwood<sup>1<sup>, Daniel M. Grove<sup>4<sup>, 
-Tadao Kishimoto<sup>2<sup>, Justin Kosiewska<sup>4<sup>, 
-Sung-Joo Lee<sup>5<sup>, Kezia R. Manlove<sup>6<sup>, 
-Cameron Mitchell<sup>4<sup>, Lisa I. Muller<sup>4<sup>, 
-Laura D. Plimpton<sup>7<sup>, Meredith C.VanAcker<sup>7<sup>, 
-Mark Q. Wilber<sup>4<sup>, W. David Walter<sup>8<sup>, 
-Maria A. Diuk-Wasser<sup>5<sup>, Grete Wilson-Henjum<sup>9<sup>, 
-Tiffany Wolf<sup>10<sup>, Jacob Wyrick<sup>4<sup>, Kim M. Pepin<sup>9<sup>, 
-and Meggan E. Craft<sup>1<sup>.
+Elias Rosenblatt<sup>1,*</sup>, Guillaume Bastille-Rousseau<sup>2</sup>, Michael
+Egan<sup>2</sup>, James Forester<sup>3</sup>, Billy J. Gardner<sup>4</sup>, 
+Tyler Garwood<sup>1</sup>, Daniel M. Grove<sup>4</sup>, 
+Tadao Kishimoto<sup>2</sup>, Justin Kosiewska<sup>4</sup>, 
+Sung-Joo Lee<sup>5</sup>, Kezia R. Manlove<sup>6</sup>, 
+Cameron Mitchell<sup>4</sup>, Lisa I. Muller<sup>4</sup>, 
+Laura D. Plimpton<sup>7</sup>, Meredith C.VanAcker<sup>7</sup>, 
+Mark Q. Wilber<sup>4</sup>, W. David Walter<sup>8</sup>, 
+Maria A. Diuk-Wasser<sup>5</sup>, Grete Wilson-Henjum<sup>9</sup>, 
+Tiffany Wolf<sup>10</sup>, Jacob Wyrick<sup>4</sup>, Kim M. Pepin<sup>9</sup>, 
+and Meggan E. Craft<sup>1</sup>.
 
 **Affiliations**:
 <sup>1<sup> Department of Ecology, Evolution, and Behavior, University of Minnesota, 1987 Upper Buford Circle, St. Paul, MN 55108, USA
