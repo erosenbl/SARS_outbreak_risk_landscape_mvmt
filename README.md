@@ -15,20 +15,20 @@ Tiffany Wolf<sup>10</sup>, Jacob Wyrick<sup>4</sup>, Kim M. Pepin<sup>9</sup>,
 and Meggan E. Craft<sup>1</sup>.
 
 **Affiliations**:
-<sup>1<sup> Department of Ecology, Evolution, and Behavior, University of Minnesota, 1987 Upper Buford Circle, St. Paul, MN 55108, USA
-<sup>2<sup> Center for Wildlife Sustainability Research, Southern Illinois University, 1125 Lincoln Drive, Carbondale, IL 62901, USA
-<sup>3<sup> Department of Fisheries, Wildlife, and Conservation Biology, University of Minnesota, 2003 Upper Buford Circle, Suite 135, St. Paul, MN 55108, USA 
-<sup>4<sup> School of Natural Resources, University of Tennessee Institute of Agriculture, 2431 Joe Johnson Dr, Knoxville, TN 37996, USA 
-<sup>5<sup> Department of Ecology, Evolution, and Environmental Biology, Columbia University, 1200 Amsterdam Ave, New York, NY 10027, USA
-<sup>6<sup> Department of Wildland Resources and Ecology Center, Utah State University, 5230 Old Main Hill, Logan, UT 84322, USA
-<sup>7<sup> Department of Evolution, Ecology, and Organismal Biology, University of California - Riverside, 900 University Ave, Riverside, CA 92521, USA
-<sup>8<sup> Department of Veterinary Microbiology and Pathology, College of Veterinary Medicine, Washington State University, P.O. Box 647040, Pullman, WA 99164-7040
-<sup>9<sup> United States Department of Agriculture, Animal and Plant Health Inspection Service,  Wildlife Services, National Wildlife Research Center,4101 Laporte Ave, Fort Collins, CO 80521, USA
-<sup>10<sup> Department of Veterinary Population Medicine, University of Minnesota, 1365 Gortner Ave, Saint Paul, MN 55108, USA
+<sup>1</sup> Department of Ecology, Evolution, and Behavior, University of Minnesota, 1987 Upper Buford Circle, St. Paul, MN 55108, USA
+<sup>2</sup> Center for Wildlife Sustainability Research, Southern Illinois University, 1125 Lincoln Drive, Carbondale, IL 62901, USA
+<sup>3</sup> Department of Fisheries, Wildlife, and Conservation Biology, University of Minnesota, 2003 Upper Buford Circle, Suite 135, St. Paul, MN 55108, USA 
+<sup>4</sup> School of Natural Resources, University of Tennessee Institute of Agriculture, 2431 Joe Johnson Dr, Knoxville, TN 37996, USA 
+<sup>5</sup> Department of Ecology, Evolution, and Environmental Biology, Columbia University, 1200 Amsterdam Ave, New York, NY 10027, USA
+<sup>6</sup> Department of Wildland Resources and Ecology Center, Utah State University, 5230 Old Main Hill, Logan, UT 84322, USA
+<sup>7</sup> Department of Evolution, Ecology, and Organismal Biology, University of California - Riverside, 900 University Ave, Riverside, CA 92521, USA
+<sup>8</sup> Department of Veterinary Microbiology and Pathology, College of Veterinary Medicine, Washington State University, P.O. Box 647040, Pullman, WA 99164-7040
+<sup>9</sup> United States Department of Agriculture, Animal and Plant Health Inspection Service,  Wildlife Services, National Wildlife Research Center,4101 Laporte Ave, Fort Collins, CO 80521, USA
+<sup>10</sup> Department of Veterinary Population Medicine, University of Minnesota, 1365 Gortner Ave, Saint Paul, MN 55108, USA
 
-<sup>*<sup>Corresponding author: erosenbl@umn.edu
+<sup>*</sup>Corresponding author: erosenbl@umn.edu
 
-**Mention of commercial products does not represent an endorsement by the US government. The findings and conclusions in this publication are those of the authors and should not be construed to represent any official USDA or US Government determination or policy.**
+Mention of commercial products does not represent an endorsement by the US government. The findings and conclusions in this publication are those of the authors and should not be construed to represent any official USDA or US Government determination or policy.
 
 ## Scripts folder
 ### Function script
