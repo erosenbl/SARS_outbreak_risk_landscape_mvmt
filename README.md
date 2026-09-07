@@ -126,7 +126,7 @@ for outbreak probability, maximum incidence rate, and maximum spread rate,
 resulting in Figure 3 in the manuscript. Users could modify the output from 
 these fitted models to recreate Figure 4 in the manusctipt.
 
-###Data subfolder
+### Data subfolder
 **df_RF_final.RDS** - A data frame containing all simulations across all study 
 areas, with relevant landscape and movement metrics used in 
 **random_forest_model_fits.R**. Note that users can use these summary data to 
