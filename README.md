@@ -79,6 +79,10 @@ contact kernel condition in simulations.
 contact  rates decay with distance for the study area selected for the slow 
 decay spatial contact kernel condition in simulations. 
 
+**ECRP_grid_dist.RDS** - A data frame containing pairwise distances between grid 
+cell centroids for the Elm Creek, MN study area 
+(from the grid **ECRP_grid.RDS**).
+
 **ECRP_grid.RDS** - spatVector (terra) object with example grid for the
 Elm Creek, MN study area.
 
@@ -87,6 +91,11 @@ displacement for female and male deer, for the Elm Creek, MN study area.
 
 **ECRP_mvmt_shape_params.RDS** - Example dataframe containing gamma distribution
 shape parameters for daily displacement, by sex, for Elm Creek, MN study area.
+
+**ECRP_NLCD.RDS** - A SpatRaster with landcover categories from the 30m-pixel 
+National Land Cover Database (NLCD) for for Elm Creek, MN study area. This 
+raster file is used in the creation of several summary dataframes here, and used
+in **Random forest analysis/example_landscape_metrics_calculation.R**.
 
 **ECRP_sim_input_fall.RDS** - Example list of simulation inputs for the Elm 
 Creek, MN study area, for use in **Example_simulation_run.R**. List includes: 
